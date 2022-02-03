@@ -1,0 +1,16 @@
+h1 {
+    font-size: 5em;
+}
+
+#profilepic {
+    height: 300px;
+}
+
+body{
+    background-color: lightcyan;
+    color: darkslateblue;
+}
+
+.socialicon{
+    height: 50px;
+}
