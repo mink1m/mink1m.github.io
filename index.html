@@ -1,55 +1,116 @@
 <!DOCTYPE html>
-
-<html lang="en" translate="no">
+<html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Minha Kim's website"/>
-  <meta name="keywords" content="Minha Kim, personal website, UCI, UCIrvine, University of California Irvine, minhak6, cs, comp sci, computer science" />
-  <meta name="author" content="Minha Kim" />
-  <meta content="width=device-width, initial-scale=1, minimum-scale=1" id="viewport" name="viewport" />
-  <meta name="google" content="notranslate">
-  <title>Minha Kim</title>
-  <link href="/images/favicon.png" rel="icon" type="image/png" />
-  <link rel="stylesheet" media="all" href="/styles.css" />
-  <script src="/scripts.js"></script>
+    <title>Minha Kim</title>
+    <meta name="description" content="Minha Kim's website" />
+    <meta name="author" content="Minha Kim" />
+    <meta name="keywords"
+        content="Minha Kim, personal website, UCI, UCIrvine, University of California Irvine, minhak6, cs, comp sci, computer science" />
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f3f3ee" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#004225" />
+
+    <!-- body font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+    <!-- font-family: 'Courier Prime', monospace;  -->
+
+    <!-- title font -->
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+    <!-- font-family: 'Gloock', serif; -->
+
+    <link rel="stylesheet" href="./style.css" />
 </head>
-<body class="home" style="background-color: #004225;">
-  <header id="header">
-    <hgroup>
-      <h1 class="logo"></h1>
-      <time data-timezone-offset="-28800"><b>01/01/2022 00:00am</b>
-        <span id="time-zone-name">&#128204 Irvine, CA</span></time>
-    </hgroup>
-  </header>
-  <div id="wrap">
-    <nav>
-      <ul>
-        <li>
-          <a href="about.html"><span>about</span></a>
-        </li>
-        <li>
-          <a href="resume.pdf" target="_blank"><span>résumé</span></a>
-        </li>
-        <li>
-          <a href="projects.html"><span>projects</span></a>
-        </li>
-        <li>
-          <a href="https://github.com/mink1m" target="_blank"><span>github</span></a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/minhakimm" target="_blank"><span>linkedin</span></a>
-        </li>
-        <li>
-          <a href="https://open.spotify.com/user/minhakim_?si=be2b3e4ba5424e5e" target="_blank"><span>spotify</span></a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-  <div id="background-image-container">
-    <img data-image="/images/racing_green.png" id="background-image" />
-  </div>
+
+<body>
+    <div class="container">
+        <div class="header-section">
+            <div class="header-frame">
+                <h1>minha kim</h1>
+                <h2>CS Student at UC Irvine</h2>
+                <h4><span id="clock"></span>&#128204 Irvine, CA</h4>
+                <script>
+                    function display_ck() {
+                        var y = new Date();
+                        var z = new Date(y.toLocaleString('en-US', { timeZone: "America/Los_Angeles" }));
+                        var diff = y.getTime() - z.getTime();
+                        var x = new Date(y.getTime() - diff);
+                        var ampm = x.getHours() >= 12 ? ' PM ' : ' AM ';
+                        var h = x.getHours()
+                        if (h < 10) {
+                            h = "0" + h;
+                        }
+                        var m = x.getMinutes();
+                        if (m < 10) {
+                            m = "0" + m;
+                        }
+                        var mth = x.getMonth() + 1;
+                        if (mth < 10) {
+                            mth = "0" + mth;
+                        }
+                        var dt = x.getDate();
+                        if (dt < 10) {
+                            dt = "0" + dt;
+                        }
+                        var x1 = mth + "/" + x.getDate() + "/" + x.getFullYear() + " " + h + ":" + m + ampm;
+                        document.getElementById('clock').innerHTML = x1;
+                        display_c();
+                    }
+                    function display_c() {
+                        var refresh = 10000;
+                        mytime = setTimeout('display_ck()', refresh)
+                    }
+                    display_c()
+                </script>
+            </div>
+            <div class="img-frame">
+                <img id="mypic" src="images/snowman.png" alt="Me!" />
+            </div>
+        </div>
+        <div class="links">
+            <a href="index.html" id="home">home</a>
+            <a href="res/resume.pdf" target="_blank">resume</a>
+            <a href="projects.html">projects</a>
+            <a href="https://github.com/mink1m" target="_blank">github</a>
+            <a href="https://www.linkedin.com/in/minhakimm/" target="_blank">linkedin</a>
+            <a href="https://open.spotify.com/user/minhakim_?si=22751f91a2844de5" target="_blank">spotify</a>
+        </div>
+
+        <div class="about">
+            <p>
+                Hi! &#128075 I'm <b> Minha Kim</b>, a sophomore studying Computer Science
+                at the <b> University of California, Irvine</b>. I plan to graduate
+                in <b> December 2024</b>.
+            </p>
+            <p>
+                I have always enjoyed working with computers and browsing the internet
+                so choosing CS as a major came naturally to me. One of my favorite
+                parts of being a programmer, as well as a student, is that the learning
+                never stops; I learn new concepts and technologies every day.
+            </p>
+            <p>
+                In my free time, I like to play/watch soccer, listen to music, and work on side-projects.
+                Right now, I'm trying to learn the guitar.
+            </p>
+            <p>
+                If you want to contact me for any reason, send me an email at
+                <a href="mailto:minhakimjst@gmail.com"><b>minhakimjst@gmail.com</b></a> or
+                connect with me on
+                <a href="https://www.linkedin.com/in/minhakimm/" target="_blank"><b>LinkedIn</b></a>.
+            </p>
+        </div>
+
+        <div class="dark-mode-toggler">
+            <input type="checkbox" id="toggler" />
+            <label for="toggler"></label>
+        </div>
+    </div>
+    <script src="./script.js"></script>
 </body>
 
 </html>
