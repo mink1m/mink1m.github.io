@@ -42,6 +42,9 @@
                         var x = new Date(y.getTime() - diff);
                         var ampm = x.getHours() >= 12 ? ' PM ' : ' AM ';
                         var h = x.getHours()
+                        if (h > 12) {
+                            h = h - 12;
+                        }
                         if (h < 10) {
                             h = "0" + h;
                         }
