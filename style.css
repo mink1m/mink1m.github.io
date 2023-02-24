@@ -171,6 +171,8 @@ br {
 	margin: 0 0 10px 2.8%;
 	border-radius: 50%;
 	overflow: hidden;
+	pointer-events: none;
+	user-select: none;
 }
 .img-frame img {
 	position: absolute;
@@ -206,4 +208,8 @@ br {
 
 .about {
 	display: block;
+}
+
+#projects {
+	margin-top: 7%;
 }
