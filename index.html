@@ -17,7 +17,7 @@
     <!-- body font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
     <!-- font-family: 'Courier Prime', monospace;  -->
 
     <!-- title font -->
@@ -42,30 +42,21 @@
                         var x = new Date(y.getTime() - diff);
                         var ampm = x.getHours() >= 12 ? ' PM ' : ' AM ';
                         var h = x.getHours()
-                        if (h > 12) {
-                            h = h - 12;
-                        }
-                        if (h < 10) {
-                            h = "0" + h;
-                        }
+                        if (h == 0){h = 12};
+                        if (h > 12) {h = h - 12;}
+                        if (h < 10) {h = "0" + h;}
                         var m = x.getMinutes();
-                        if (m < 10) {
-                            m = "0" + m;
-                        }
+                        if (m < 10) {m = "0" + m;}
                         var mth = x.getMonth() + 1;
-                        if (mth < 10) {
-                            mth = "0" + mth;
-                        }
+                        if (mth < 10) {mth = "0" + mth;}
                         var dt = x.getDate();
-                        if (dt < 10) {
-                            dt = "0" + dt;
-                        }
+                        if (dt < 10) {dt = "0" + dt;}
                         var x1 = mth + "/" + x.getDate() + "/" + x.getFullYear() + " " + h + ":" + m + ampm;
                         document.getElementById('clock').innerHTML = x1;
                         display_c();
                     }
                     function display_c() {
-                        var refresh = 10000;
+                        var refresh = 10;   // in ms
                         mytime = setTimeout('display_ck()', refresh)
                     }
                     display_c()
@@ -101,19 +92,20 @@
             </p>
             <p>
                 If you want to contact me for any reason, send me an email at
-                <a href="mailto:minhakimjst@gmail.com"><b>minhakimjst@gmail.com</b></a> or
+                <a href="mailto:minhakimjst@gmail.com">minhakimjst@gmail.com</a> or
                 connect with me on
-                <a href="https://www.linkedin.com/in/minhakimm/" target="_blank"><b>LinkedIn</b></a>.
+                <a href="https://www.linkedin.com/in/minhakimm/" target="_blank">LinkedIn</a>.
             </p>
         </div>
         <div id="projects">
             <h2>projects</h2>
             <br></br>
-            <h3> -<a href="https://devpost.com/software/hackuci-jwe3al?ref_content=my-projects-tab&ref_feature=my_projects" target="_blank">playpic</a>; @hackuci 2022</h3>
+            <p id="projectTitle"> -<a href="https://devpost.com/software/hackuci-jwe3al?ref_content=my-projects-tab&ref_feature=my_projects" target="_blank"><b>playpic</b></a>; @hackuci 2022</p>
             <p>
                 Creates a twenty-song Spotify playlist using an image as an input. 
                 PlayPic computes the 'mood' of the image through color analysis
                 and uses Spotify's API to create the playlist.
+                <a href="404.html"> s </a>
             </p>
             <h3>more projects are on their way &#128736</h3>
         </div>

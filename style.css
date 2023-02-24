@@ -7,6 +7,10 @@
 	--linkHover: #eb4888;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 html,
 body {
 	width: 100%;
@@ -98,7 +102,7 @@ button.dark-mode button {
 	position: absolute;
 	top: 3px;
 	left: -62px;
-	transition: all 0.5s ease-in;
+	transition: all 0.3s ease-in-out;
 }
 .dark-mode-toggler input[type="checkbox"]:checked + label::before {
 	background: var(--green);
@@ -108,7 +112,7 @@ button.dark-mode button {
 	left: -28px;
 	background: var(--green);
 	border: 2px solid var(--beige);
-	transition: all 0.5s ease-in;
+	/*transition: all 0.3s ease-in-out;*/
 }
 
 h1 {
@@ -118,6 +122,10 @@ h1 {
 
 h2 {
 	margin:0;
+	font-family: 'Courier New', Courier, monospace;
+}
+
+h3 {
 	font-family: 'Courier New', Courier, monospace;
 }
 
@@ -212,4 +220,24 @@ br {
 
 #projects {
 	margin-top: 7%;
+}
+
+#projectTitle {
+	font-size: larger;
+	margin: 0;
+}
+@media (max-width: 600px) {
+	#projectTitle {
+		margin: auto;
+		text-align: center;
+	}
+}
+
+.pnf {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
 }
