@@ -52,6 +52,12 @@ button.dark-mode button {
 	flex-wrap: wrap;
 	font-family: 'Gloock', serif;
 }
+@media (max-width: 700px) {
+	.header-section {
+		display: grid;
+		justify-content: center;
+	}
+}
 
 .header-frame {
 	max-width: 350px;
