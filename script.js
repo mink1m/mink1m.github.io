@@ -1,15 +1,15 @@
 let colors = ["#f94144","#f3722c","#f8961e","#f9844a","#90be6d","#43aa8b","#4d908e","#577590","#277da1","#FF5733"];
 
-
+var i = 0;
 
 (function () {
 	setModeEventListener();
 	setRandomLinkColor();
 	setColorHoverListener();
-
 	setInterval(() => {
 		setRandomLinkColor();
-	}, 9000);
+		setPic();
+	}, 10000);
 })();
 
 /* Dark Mode */
@@ -33,7 +33,6 @@ function setModeEventListener() {
 /* Colors */
 
 function getRandomColor() {
-    
 	return colors[Math.floor(Math.random() * colors.length)];
 }
 
@@ -47,4 +46,14 @@ function setColorHoverListener() {
 	Array.from(document.querySelectorAll("a, button")).forEach((e) => {
 		e.addEventListener("mouseover", setRandomLinkColor);
 	});
+}
+
+/* Generate next photo */
+function setPic() {
+	if (i == 4){	// change if more pics; if on me_1, make it 2 
+		i = 0;
+	}
+	let genImage = "images/me_" + i + ".jpg";
+	document.getElementById("mypic").src = genImage;
+	i++;
 }

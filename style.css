@@ -177,7 +177,7 @@ br {
 	width: 300px;
 	height: 300px;
 	margin: 0 0 10px 2.8%;
-	border-radius: 50%;
+	border-radius: 41%;
 	overflow: hidden;
 	pointer-events: none;
 	user-select: none;
@@ -192,7 +192,8 @@ br {
 }
 @media (max-width: 700px) {
 	.img-frame {
-		width: 100%;
+		width: 55vmin;
+		height: 55vmin;
 		margin: auto;
 		display: block;	
 	}
@@ -209,8 +210,11 @@ br {
 		text-align: center;
 	}
 	.links a:not(:last-child) {
-		margin: 0 3vw 0 0;
+		margin: 0 3vmin 0 0;
 		text-align: center;
+	}
+	.links a:is(:last-child) {
+		line-height: 9vmin;
 	}
 }
 
