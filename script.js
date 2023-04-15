@@ -9,7 +9,7 @@ var i = 0;
 	setInterval(() => {
 		setRandomLinkColor();
 		setPic();
-	}, 10000);
+	}, 7000);
 })();
 
 /* Dark Mode */
