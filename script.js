@@ -50,7 +50,7 @@ function setColorHoverListener() {
 
 /* Generate next photo */
 function setPic() {
-	if (i == 4){	// change if more pics; if on me_1, make it 2 
+	if (i == 3){	// change if more pics; if on me_1, make it 2 
 		i = 0;
 	}
 	let genImage = "images/me_" + i + ".jpg";
