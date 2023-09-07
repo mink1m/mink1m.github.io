@@ -35,7 +35,6 @@ body.dark-mode,
 body.dark-mode button,
 button.dark-mode,
 button.dark-mode button {
-	/*background: var(--green);*/
 	background: var(--darkGreen);
 	color: var(--beige);
 }
@@ -107,13 +106,13 @@ button.dark-mode button {
 	transition: all 0.3s ease-in-out;
 }
 .dark-mode-toggler input[type="checkbox"]:checked + label::before {
-	background: var(--green);
+	background: var(--darkGreen);
 	border: 2px solid var(--beige);
 }
 .dark-mode-toggler input[type="checkbox"]:checked + label::after {
 	left: -28px;
-	background: var(--green);
-	border: 2px solid var(--beige);
+	background: var(--beige);
+	border: 2px solid var(--darkGreen);
 	/*transition: all 0.3s ease-in-out;*/
 }
 
