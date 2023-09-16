@@ -246,3 +246,11 @@ br {
 	transform: translate(-50%, -50%);
 	text-align: center;
 }
+
+.footer {
+	position: relative;
+	text-align: center;    
+	width: 100%;
+	font-family: 'Gloock', serif;
+	bottom: 35px; 
+}
