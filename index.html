@@ -31,12 +31,12 @@
         <div class="header-section">
             <div class="header-frame">
                 <h1>minha kim</h1>
-                <h2>CS Student at UC Irvine</h2>
-                <h4><span id="clock"></span>&#128204 Irvine, CA</h4>
+                <h2>Software Engineer @ Citi</h2>
+                <h4><span id="clock"></span>&#128204 Tampa, FL</h4>
                 <script>
                     function display_ck() {
                         var y = new Date();
-                        var z = new Date(y.toLocaleString('en-US', { timeZone: "America/Los_Angeles" }));
+                        var z = new Date(y.toLocaleString('en-US', { timeZone: "America/New_York" }));
                         var diff = y.getTime() - z.getTime();
                         var x = new Date(y.getTime() - diff);
                         var ampm = x.getHours() >= 12 ? ' PM ' : ' AM ';
@@ -74,7 +74,7 @@
         </div>
         <div class="about">
             <p>
-                Hi! &#128075 I'm <b> Minha Kim</b>, a recent graduate of Computer Science 
+                Hi! &#128075 I'm <b> Minha Kim</b>, a software engineer at <b>Citi</b> and a recent graduate of Computer Science 
                 at the <b> University of California, Irvine</b> (Dec. '24). 
             </p>
             <p>
@@ -92,6 +92,14 @@
                 connect with me on
                 <a href="https://www.linkedin.com/in/minhakimm/" target="_blank">LinkedIn</a>.
             </p>
+        </div>
+        <div id="employment">
+            <h2>
+                employment
+            </h2>
+            <br></br>
+            <p id="company">-<b>Citigroup</b></a></p>
+            <p id="role">Software Engineer (Officer – C11) | Sept 2025 - Present</p>
         </div>
         <div id="projects">
             <h2>projects</h2>

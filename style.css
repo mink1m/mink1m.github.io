@@ -4,8 +4,9 @@
 	--green: #004225;
 	--highlight: #c7ccc8;
 	--linkColor: #24d05a;
-	--linkHover: #eb4888;
-	--darkGreen: #0f2520;
+	/* --linkHover: #eb4888; */
+	--linkHover: #eaa6c1;
+	--darkGreen: #0d221d;
 }
 
 html {
@@ -46,9 +47,9 @@ button.dark-mode button {
 .container {
 	margin: 50px auto;
 	padding: 5px;
-	max-width: 650px;
+	max-width: 750px;
 }
-@media (max-width: 700px) {
+@media (max-width: 750px) {
 	.container {
 		padding: 20px;
 	}
@@ -61,7 +62,7 @@ button.dark-mode button {
 	flex-wrap: wrap;
 	font-family: 'Gloock', serif;
 }
-@media (max-width: 700px) {
+@media (max-width: 750px) {
 	.header-section {
 		display: grid;
 		justify-content: center;
@@ -140,7 +141,7 @@ h4 {
 }
 
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
 	h1 {
 		text-align: center;
 	}
@@ -195,7 +196,7 @@ br {
 	transform: translate(-50%, -50%);
 	height: 100%;
 }
-@media (max-width: 700px) {
+@media (max-width: 750px) {
 	.img-frame {
 		width: 55vmin;
 		height: 55vmin;
@@ -241,6 +242,36 @@ br {
 		text-align: center;
 	}
 }
+
+
+/* #employmentDesc {
+	font-size: larger;
+	margin: 0;
+	margin: 0.25rem 0 0 2rem; 
+
+}
+@media (max-width: 600px) {
+	#employmentDesc {
+		margin: auto;
+		text-align: center;
+	}
+} 
+*/
+
+#employment {
+	margin-top: 7%;
+}
+
+#employment #company {
+	font-size: larger;
+	margin: 0;
+}
+
+#employment #role {
+  margin: 0.25rem 0 0 2rem;
+  color: #6d6d6d;
+}
+
 
 .pnf {
 	position: absolute;
