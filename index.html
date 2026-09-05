@@ -1,168 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Minha Kim</title>
-    <meta name="description" content="Minha Kim's website" />
+    <title>Minha Kim — Software Engineer</title>
+    <meta name="description" content="Minha Kim's personal website and selected projects." />
     <meta name="author" content="Minha Kim" />
-    <meta name="keywords"
-        content="Minha Kim, personal website, UCI, UCIrvine, University of California Irvine, minhak6, cs, comp sci, computer science" />
-    <meta name="google" content="notranslate">
-    <link rel="icon" type="image/png" href="images/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f3f3ee" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#004225" />
-
-    <!-- body font -->
+    <meta name="theme-color" content="#f3f3ee" />
+    <link id="favicon" rel="icon" type="image/svg+xml" href="images/mk_green.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
-    <!-- font-family: 'Courier Prime', monospace;  -->
-
-    <!-- title font -->
-    <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
-    <!-- font-family: 'Gloock', serif; -->
-
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Gloock&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css" />
 </head>
-
 <body>
-    <div class="container">
-        <div class="header-section">
-            <div class="header-frame">
-                <h1>minha kim</h1>
-                <h2>Software Engineer @ Citi</h2>
-                <h4><span id="clock"></span>&#128204 Tampa, FL</h4>
-                <script>
-                    function display_ck() {
-                        var y = new Date();
-                        var z = new Date(y.toLocaleString('en-US', { timeZone: "America/New_York" }));
-                        var diff = y.getTime() - z.getTime();
-                        var x = new Date(y.getTime() - diff);
-                        var ampm = x.getHours() >= 12 ? ' PM ' : ' AM ';
-                        var h = x.getHours()
-                        if (h == 0){h = 12};
-                        if (h > 12) {h = h - 12;}
-                        if (h < 10) {h = "0" + h;}
-                        var m = x.getMinutes();
-                        if (m < 10) {m = "0" + m;}
-                        var mth = x.getMonth() + 1;
-                        if (mth < 10) {mth = "0" + mth;}
-                        var dt = x.getDate();
-                        if (dt < 10) {dt = "0" + dt;}
-                        var x1 = mth + "/" + x.getDate() + "/" + x.getFullYear() + " " + h + ":" + m + ampm;
-                        document.getElementById('clock').innerHTML = x1;
-                        display_c();
-                    }
-                    function display_c() {
-                        var refresh = 10;   // in ms
-                        mytime = setTimeout('display_ck()', refresh)
-                    }
-                    display_c()
-                </script>
-            </div>
-            <div class="img-frame">
-                <img id="mypic" src="images/me_0.jpg" alt="Me!" />
-            </div>
-        </div>
-        <div class="links">
-            <a href="#top">about</a>
-            <a href="#projects">projects</a>
-            <a href="res/resume.pdf" target="_blank">resume</a>
-            <a href="https://github.com/mink1m" target="_blank">github</a>
-            <a href="https://www.linkedin.com/in/minhakimm/" target="_blank">linkedin</a>
-        </div>
-        <div class="about">
-            <p>
-                Hi! &#128075 I'm <b> Minha Kim</b>, a software engineer at <b>Citi</b> and a recent graduate of Computer Science 
-                at the <b> University of California, Irvine</b> (Dec. '24). 
-            </p>
-            <p>
-                I have always enjoyed working with computers and browsing the internet
-                so choosing CS as a major came naturally to me. One of my favorite
-                parts of being a programmer, as well as a student, is that the learning
-                never stops; I learn new concepts and technologies every day.
-            </p>
-            <p>
-                In my free time, I like to hike, play/watch soccer, and work on side-projects. 
-            </p>
-            <p>
-                To contact me, send me an email at
-                <a href="mailto:minhakimjst@gmail.com">minhakimjst@gmail.com</a> or
-                connect with me on
-                <a href="https://www.linkedin.com/in/minhakimm/" target="_blank">LinkedIn</a>.
-            </p>
-        </div>
-        <div id="employment">
-            <h2>
-                employment
-            </h2>
-            <br></br>
-            <p id="company">-<b>Citigroup</b></a></p>
-            <p id="role">Software Engineer (Officer – C11) | Sept 2025 - Present</p>
-        </div>
-        <div id="projects">
-            <h2>projects</h2>
-            <br></br>
-            <p id="projectTitle"> -<a href="https://github.com/mink1m/gym-bro" target="_blank"><b>gym bro</b></a></p>
-            <p>
-                Programmed an iOS app that recommends personalized workouts to the user based on their 
-                physical traits, previous workouts, and feedback. Developed using Swift/UI for the frontend 
-                and uses Firebase to store information on the cloud. Has a built-in utility function which
-                calculates scores for each workout, varying for every user. Has nearly 100 workouts, with their
-                pictures and descriptions. 
-            </p>
-            <p id="projectTitle"> -<a href="https://github.com/mink1m/fabflixclone" target="_blank"><b>fabflix</b></a></p>
-            <p>
-                Interact with Fabflix, a Netflix clone, complete with features such as log in encryption,
-                reCaptcha verification, full-text search, and auto-complete. Used JDBC to connect Java servlets
-                to MySQL databases which contained over 9,000 movies and 60,000 actors. Deployed on Amazon
-                EC2 and created an Android app with Gradle. 
-            </p>
-
-            <p id="projectTitle"> -<a href="https://github.com/tim-kashani/climate-vr-game" target="_blank"><b>2035: a VR game</b></a></p>
-            <p>
-                Developed a puzzle VR game set in the year 2035, where the world, 
-                a corporatocracy, has become dominated by global warming. Implemented
-                object collision/handling, player movement, and puzzle mechanics.
-                Focused on the second room's puzzle building/implementation
-                using Unity and C# scripts. 
-            </p>
-
-            <p id="projectTitle"> -<a href="https://github.com/mink1m/cifar-10/" target="_blank"><b>cifar-10 dataset analysis</b></a></p>
-            <p>
-                Analyzed four different classifiers (k-nearest neighbors, logistic classifier, 
-                feed-forward neural network, and convoluted neural networks) on the CIFAR-10 dataset. 
-                Used Python and various libraies such as PyTorch, sci-kit-learn, and NumPy to 
-                evaluate models. Used Jupyter Notebooks and Matplotlib 
-                to plot and track the data. 
-            </p>
-
-            <p id="projectTitle"> -<a href="https://devpost.com/software/hackuci-jwe3al?ref_content=my-projects-tab&ref_feature=my_projects" target="_blank"><b>playpic</b></a>; @hackuci 2022</p>
-            <p>
-                Input an image and create a twenty-song Spotify playlist.
-                PlayPic computes the 'mood' of the image through color analysis
-                and uses Spotify's API to create the playlist.
-            </p>
-
-            <p id="projectTitle"> -<a href="https://minhak.itch.io/columns" target="_blank"><b>columns</b></a></p>
-            <p>
-                Play a game of columns using the Pygame library, with color-coded 
-                blocks and cursor movement key controls.
-            </p>
-        </div>
+    <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+    <header class="site-header">
+        <a class="wordmark" href="#top" aria-label="Back to top">
+            <img class="wordmark-light" src="images/mk_green.svg" alt="mk." />
+            <img class="wordmark-dark" src="images/mk_beige.svg" alt="" />
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+            <a href="#about">about</a>
+            <a href="#projects">work</a>
+            <a href="res/resume.pdf" target="_blank" rel="noreferrer">resume <span aria-hidden="true">↗</span></a>
+        </nav>
         <div class="dark-mode-toggler">
             <input type="checkbox" id="toggler" />
-            <label for="toggler"></label>
+            <label for="toggler"><span class="toggle-icon" aria-hidden="true">☼</span><span class="sr-only">Toggle dark mode</span></label>
         </div>
-    </div>
-    <div class="footer">
-        by <a href="#" id="copyLink" onclick="document.execCommand('copy');alert('Copied minhakimjst@gmail.com!'); return false;">minha</a>
-    </div>
-    <!-- <div class="fixed-box">
-        I am currently looking for an <b>entry-level software engineering role</b>. 
-        Please contact me!
-    </div> -->
+    </header>
+    <main id="top" class="container">
+        <section class="hero reveal">
+            <div class="hero-copy">
+                <p class="eyebrow">software engineer <span class="dot">●</span> tampa, fl</p>
+                <h1>minha<br><em>kim</em></h1>
+                <p class="hero-intro">CS @ UCI. Currently SWE @ Citi.</p>
+                <p class="local-time"><span class="status-dot"></span><span id="clock">local time loading...</span></p>
+            </div>
+            <div class="img-frame" data-parallax>
+                <img id="mypic" src="images/me_0.jpg" alt="Me" draggable="false"/>
+            </div>
+        </section>
+        <div class="links reveal" aria-label="Social links">
+            <a href="mailto:minhakimjst@gmail.com">email</a>
+            <a href="https://github.com/mink1m" target="_blank" rel="noreferrer">github <span aria-hidden="true">↗</span></a>
+            <a href="https://www.linkedin.com/in/minhakimm/" target="_blank" rel="noreferrer">linkedin <span aria-hidden="true">↗</span></a>
+        </div>
+        <section id="about" class="section about reveal">
+            <div class="section-heading"><span>01</span><h2>about</h2></div>
+            <div class="section-content">
+                <p>Hi! I'm <b>Minha Kim</b>, a software engineer at <b>Citi</b> and a Computer Science graduate from the <b>University of California, Irvine</b>.</p>
+                <p>I have always enjoyed working with computers and browsing the internet, so choosing CS as a major came naturally. The best part of being a programmer is that the learning never stops; there is always a new concept or technology to explore.</p>
+                <p>Outside of work, I like to hike, play and watch soccer, and make small side-projects.</p>
+            </div>
+        </section>
+        <section id="employment" class="section reveal">
+            <div class="section-heading"><span>02</span><h2>now</h2></div>
+            <div class="section-content timeline-item">
+                <p class="meta">sept 2025 — present</p>
+                <h3>Software Engineer <span>at</span> Citi</h3>
+            </div>
+        </section>
+        <section id="projects" class="section reveal">
+            <div class="section-heading"><span>03</span><h2>selected work</h2></div>
+            <div class="project-grid">
+                <article class="project-card"><div class="project-top"><span>Swift · Python</span><span>2025</span></div><h3><a href="https://github.com/mink1m/gym-bro" target="_blank" rel="noreferrer">gym bro <span>↗</span></a></h3><p>A personalized iOS workout companion with nearly 100 workouts, feedback-based scoring, and cloud-synced user data.</p></article>
+                <article class="project-card"><div class="project-top"><span>Java · JavaScript · MySQL</span><span>2023</span></div><h3><a href="https://github.com/mink1m/fabflixclone" target="_blank" rel="noreferrer">fabflix <span>↗</span></a></h3><p>A Netflix-inspired app with encrypted login, reCAPTCHA, full-text search, and auto-complete across 9,000+ movies.</p></article>
+                <article class="project-card"><div class="project-top"><span>Unity · C#</span><span>2022</span></div><h3><a href="https://github.com/tim-kashani/climate-vr-game" target="_blank" rel="noreferrer">2035: a VR game <span>↗</span></a></h3><p>A puzzle game set in a climate-changed future. Focused on player movement, object handling, and room puzzles.</p></article>
+                <article class="project-card"><div class="project-top"><span>Python · PyTorch · Jupyter</span><span>2023</span></div><h3><a href="https://github.com/mink1m/cifar-10/" target="_blank" rel="noreferrer">cifar-10 analysis <span>↗</span></a></h3><p>Compared four classifiers on the CIFAR-10 dataset using Python, PyTorch, scikit-learn, and NumPy.</p></article>
+                <article class="project-card"><div class="project-top"><span>React · Node.js · JavaScript</span><span>2022</span></div><h3><a href="https://devpost.com/software/hackuci-jwe3al" target="_blank" rel="noreferrer">playpic <span>↗</span></a></h3><p>Turn an image into a twenty-song Spotify playlist by translating color into mood.</p></article>
+                <article class="project-card"><div class="project-top"><span>Python · Pygame</span><span>2022</span></div><h3><a href="https://minhak.itch.io/columns" target="_blank" rel="noreferrer">columns <span>↗</span></a></h3><p>A colorful, keyboard-controlled take on the classic matching game.</p></article>
+            </div>
+        </section>
+    </main>
+    <footer class="footer"><span>© <span id="year"></span> minha kim</span><a href="#top">back to top ↑</a></footer>
     <script src="./script.js"></script>
 </body>
 </html>
