@@ -33,7 +33,7 @@ function setTheme(isDark) {
     toggler.checked = isDark;
     localStorage.setItem("theme", isDark ? "dark" : "light");
     document.querySelector('meta[name="theme-color"]').setAttribute("content", isDark ? "#0d221d" : "#f3f3ee");
-    favicon.href = "images/mk_green.svg";
+    favicon.href = "images/mk_beige.svg";
 }
 
 const savedTheme = localStorage.getItem("theme");
