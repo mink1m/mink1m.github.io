@@ -95,3 +95,54 @@ setInterval(() => {
         portrait.classList.remove("is-changing");
     }, 180);
 }, 7000);
+
+(function () {
+  var header = document.querySelector('.site-header');
+  if (!header) return;
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var ENTER = 40;
+  var EXIT = 12;
+  var isGlass = false;
+  var ticking = false;
+
+  function applyScrollState() {
+    var y = window.scrollY;
+    if (!isGlass && y > ENTER) {
+      isGlass = true;
+      header.classList.add('is-glass');
+    } else if (isGlass && y < EXIT) {
+      isGlass = false;
+      header.classList.remove('is-glass');
+    }
+    ticking = false;
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(applyScrollState);
+      ticking = true;
+    }
+  }
+
+  applyScrollState();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  if (!reduceMotion && window.matchMedia('(hover: hover)').matches) {
+    header.addEventListener('pointermove', function (e) {
+      var rect = header.getBoundingClientRect();
+      var cx = rect.left + rect.width / 2;
+      var cy = rect.top + rect.height / 2;
+      var dx = e.clientX - cx;
+      var dy = e.clientY - cy;
+      // 0deg = up, increasing clockwise, matching CSS conic-gradient's convention.
+      var angle = (Math.atan2(dx, -dy) * 180 / Math.PI + 360) % 360;
+      header.style.setProperty('--rim-angle', angle + 'deg');
+      header.classList.add('pointer-active');
+    });
+    header.addEventListener('pointerleave', function () {
+      header.classList.remove('pointer-active');
+    });
+  }
+})();
