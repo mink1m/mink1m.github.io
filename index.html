@@ -27,7 +27,20 @@
         </nav>
         <div class="dark-mode-toggler">
             <input type="checkbox" id="toggler" />
-            <label for="toggler"><span class="toggle-icon" aria-hidden="true">☼</span><span class="sr-only">Toggle dark mode</span></label>
+            <label for="toggler">
+                <span class="toggle-icon toggle-icon-sun" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+                        <circle cx="8" cy="8" r="3.1"></circle>
+                        <path d="M8 1.4v1.6M8 13v1.6M1.4 8h1.6M13 8h1.6M3.4 3.4l1.15 1.15M11.45 11.45l1.15 1.15M12.6 3.4l-1.15 1.15M4.55 11.45l-1.15 1.15"></path>
+                    </svg>
+                </span>
+                <span class="toggle-icon toggle-icon-moon" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor">
+                        <path d="M13.2 9.1A5.6 5.6 0 0 1 6.9 2.8a.5.5 0 0 0-.7-.55A6.6 6.6 0 1 0 13.75 9.8a.5.5 0 0 0-.55-.7Z"></path>
+                    </svg>
+                </span>
+                <span class="sr-only">Toggle dark mode</span>
+            </label>
         </div>
     </header>
     <main id="top" class="container">

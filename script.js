@@ -38,6 +38,7 @@ function setTheme(isDark) {
 
 const savedTheme = localStorage.getItem("theme");
 setTheme(savedTheme === "dark");
+requestAnimationFrame(() => requestAnimationFrame(() => body.classList.add("theme-ready")));
 toggler.addEventListener("change", () => setTheme(toggler.checked));
 
 document.getElementById("year").textContent = new Date().getFullYear();
