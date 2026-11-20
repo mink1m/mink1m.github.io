@@ -4,7 +4,7 @@
     <title>Minha Kim — Software Engineer</title>
     <meta name="description" content="Minha Kim's personal website and selected projects." />
     <meta name="author" content="Minha Kim" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#f3f3ee" />
     <link id="favicon" rel="icon" type="image/svg+xml" href="images/mk_beige.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Gloock&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css" />
 </head>
-<body>
+<body id="top">
     <canvas id="zenGarden" aria-hidden="true"></canvas>
     <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
     <header class="site-header">
@@ -22,7 +22,7 @@
         </a>
         <nav class="site-nav" aria-label="Primary navigation">
             <a href="#about">about</a>
-            <a href="#projects">work</a>
+            <a href="#employment">work</a>
             <a href="res/resume.pdf" target="_blank" rel="noreferrer">resume <span aria-hidden="true">↗</span></a>
         </nav>
         <div class="dark-mode-toggler">
@@ -43,20 +43,20 @@
             </label>
         </div>
     </header>
-    <main id="top" class="container">
+    <main class="container">
         <section class="hero reveal">
             <div class="hero-copy">
                 <p class="eyebrow">software engineer <span class="dot">●</span> tampa, fl</p>
                 <h1>minha<br><em>kim</em></h1>
-                <p class="hero-intro">CS @ UCI. Currently SWE @ Citi.</p>
+                <p class="hero-intro">CS @ UCI, currently SWE @ Citi.</p>
                 <p class="local-time"><span class="status-dot"></span><span id="clock">local time loading...</span></p>
             </div>
             <div class="img-frame" data-parallax>
-                <img id="mypic" src="images/me_0.jpg" alt="Me" draggable="false"/>
+                <img id="mypic" src="images/me_0.jpg" alt="Portrait of Minha Kim" draggable="false" />
             </div>
         </section>
         <div class="links reveal" aria-label="Social links">
-            <a href="mailto:minhakimjst@gmail.com">email</a>
+            <a href="mailto:minhakimjst@gmail.com" id="emailLink" data-email="minhakimjst@gmail.com">email</a>
             <a href="https://github.com/mink1m" target="_blank" rel="noreferrer">github <span aria-hidden="true">↗</span></a>
             <a href="https://www.linkedin.com/in/minhakimm/" target="_blank" rel="noreferrer">linkedin <span aria-hidden="true">↗</span></a>
         </div>
@@ -64,7 +64,7 @@
             <div class="section-heading"><span>01</span><h2>about</h2></div>
             <div class="section-content">
                 <p>Hi! I'm <b>Minha Kim</b>, a software engineer at <b>Citi</b> and a Computer Science graduate from the <b>University of California, Irvine</b>.</p>
-                <p>I have always enjoyed working with computers and browsing the internet, so choosing CS as a major came naturally. The best part of being a programmer is that the learning never stops; there is always a new concept or technology to explore.</p>
+                <p>I have always enjoyed working with computers and browsing the internet, so choosing CS as a major came naturally. I find the best part of being a programmer is that the learning never stops. I enjoy exploring new technologies and tools to work with.</p>
                 <p>Outside of work, I like to hike, play and watch soccer, and make small side-projects.</p>
             </div>
         </section>
@@ -73,23 +73,23 @@
             <div class="section-content timeline-item">
                 <p class="meta">sept 2025 — present</p>
                 <h3>Software Engineer <span>at</span> Citi</h3>
-                <p>> Tampa, FL</p>
-
+                <p class="location">Tampa, FL</p>
             </div>
         </section>
         <section id="projects" class="section reveal">
             <div class="section-heading"><span>03</span><h2>projects</h2></div>
             <div class="project-grid">
-                <article class="project-card"><div class="project-top"><span>Swift · Python</span><span>2025</span></div><h3><a href="https://github.com/mink1m/gym-bro" target="_blank" rel="noreferrer">gym bro <span>↗</span></a></h3><p>A personalized iOS workout companion with nearly 100 workouts, feedback-based scoring, and cloud-synced user data.</p></article>
-                <article class="project-card"><div class="project-top"><span>Java · JavaScript · MySQL</span><span>2023</span></div><h3><a href="https://github.com/mink1m/fabflixclone" target="_blank" rel="noreferrer">fabflix <span>↗</span></a></h3><p>A Netflix-inspired app with encrypted login, reCAPTCHA, full-text search, and auto-complete across 9,000+ movies.</p></article>
-                <article class="project-card"><div class="project-top"><span>Unity · C#</span><span>2022</span></div><h3><a href="https://github.com/tim-kashani/climate-vr-game" target="_blank" rel="noreferrer">2035: a VR game <span>↗</span></a></h3><p>A puzzle game set in a climate-changed future. Focused on player movement, object handling, and room puzzles.</p></article>
-                <article class="project-card"><div class="project-top"><span>Python · PyTorch · Jupyter</span><span>2023</span></div><h3><a href="https://github.com/mink1m/cifar-10/" target="_blank" rel="noreferrer">cifar-10 analysis <span>↗</span></a></h3><p>Compared four classifiers on the CIFAR-10 dataset using Python, PyTorch, scikit-learn, and NumPy.</p></article>
-                <article class="project-card"><div class="project-top"><span>React · Node.js · JavaScript</span><span>2022</span></div><h3><a href="https://devpost.com/software/hackuci-jwe3al" target="_blank" rel="noreferrer">playpic <span>↗</span></a></h3><p>Turn an image into a twenty-song Spotify playlist by translating color into mood.</p></article>
-                <article class="project-card"><div class="project-top"><span>Python · Pygame</span><span>2022</span></div><h3><a href="https://minhak.itch.io/columns" target="_blank" rel="noreferrer">columns <span>↗</span></a></h3><p>A colorful, keyboard-controlled take on the classic matching game.</p></article>
+                <article class="project-card"><div class="project-top"><span>Swift · Python</span><span>2025</span></div><h3><a href="https://github.com/mink1m/gym-bro" target="_blank" rel="noreferrer">gym bro <span aria-hidden="true">↗</span></a></h3><p>A personalized iOS workout companion with nearly 100 workouts, feedback-based scoring, and cloud-synced user data.</p></article>
+                <article class="project-card"><div class="project-top"><span>Java · JavaScript · MySQL</span><span>2023</span></div><h3><a href="https://github.com/mink1m/fabflixclone" target="_blank" rel="noreferrer">fabflix <span aria-hidden="true">↗</span></a></h3><p>A Netflix-inspired app with encrypted login, reCAPTCHA, full-text search, and auto-complete across 9,000+ movies.</p></article>
+                <article class="project-card"><div class="project-top"><span>Unity · C#</span><span>2022</span></div><h3><a href="https://github.com/tim-kashani/climate-vr-game" target="_blank" rel="noreferrer">2035: a VR game <span aria-hidden="true">↗</span></a></h3><p>A puzzle game set in a climate-changed future. Focused on player movement, object handling, and room puzzles.</p></article>
+                <article class="project-card"><div class="project-top"><span>Python · PyTorch · Jupyter</span><span>2023</span></div><h3><a href="https://github.com/mink1m/cifar-10/" target="_blank" rel="noreferrer">cifar-10 analysis <span aria-hidden="true">↗</span></a></h3><p>Compared four classifiers on the CIFAR-10 dataset using Python, PyTorch, scikit-learn, and NumPy.</p></article>
+                <article class="project-card"><div class="project-top"><span>React · Node.js · JavaScript</span><span>2022</span></div><h3><a href="https://devpost.com/software/hackuci-jwe3al" target="_blank" rel="noreferrer">playpic <span aria-hidden="true">↗</span></a></h3><p>Turn an image into a twenty-song Spotify playlist by translating color into mood.</p></article>
+                <article class="project-card"><div class="project-top"><span>Python · Pygame</span><span>2022</span></div><h3><a href="https://minhak.itch.io/columns" target="_blank" rel="noreferrer">columns <span aria-hidden="true">↗</span></a></h3><p>A colorful, keyboard-controlled take on the classic matching game.</p></article>
             </div>
         </section>
     </main>
     <footer class="footer"><span>© <span id="year"></span> minha kim</span><a href="#top">back to top ↑</a></footer>
+    <div id="copyToast" class="copy-toast" role="status" aria-live="polite" aria-atomic="true"></div>
     <script src="./script.js"></script>
 </body>
 </html>
