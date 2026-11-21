@@ -9,6 +9,7 @@ const header = document.querySelector(".site-header");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function updateClock() {
+    if (!clock) return;
     const now = new Intl.DateTimeFormat("en-US", {
         timeZone: "America/New_York",
         month: "2-digit",
@@ -22,21 +23,25 @@ function updateClock() {
 
 function setTheme(isDark) {
     body.classList.toggle("dark-mode", isDark);
-    toggler.checked = isDark;
+    if (toggler) toggler.checked = isDark;
     localStorage.setItem("theme", isDark ? "dark" : "light");
-    document.querySelector('meta[name="theme-color"]').setAttribute("content", isDark ? "#0d221d" : "#f3f3ee");
-    favicon.href = "images/mk_beige.svg";
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+    if (themeMeta) themeMeta.setAttribute("content", isDark ? "#0d221d" : "#f3f3ee");
+    if (favicon) favicon.href = "/images/mk_beige.svg";
 }
 
 const savedTheme = localStorage.getItem("theme");
 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 setTheme(savedTheme ? savedTheme === "dark" : prefersDark);
 requestAnimationFrame(() => requestAnimationFrame(() => body.classList.add("theme-ready")));
-toggler.addEventListener("change", () => setTheme(toggler.checked));
+if (toggler) toggler.addEventListener("change", () => setTheme(toggler.checked));
 
-document.getElementById("year").textContent = new Date().getFullYear();
-updateClock();
-setInterval(updateClock, 30000);
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+if (clock) {
+    updateClock();
+    setInterval(updateClock, 30000);
+}
 
 document.querySelectorAll('a[href="#top"]').forEach((link) => {
     link.addEventListener("click", (e) => {
@@ -160,13 +165,11 @@ function updateActiveNav() {
 }
 
 const portraits = ["images/me_0.jpg", "images/me_1.jpg", "images/me_2.jpg"];
-portraits.slice(1).forEach((src) => {
-    const img = new Image();
-    img.src = src;
-});
 let portraitIndex = 0;
+let portraitTimer = null;
 
 function cyclePortrait() {
+    if (!portrait) return;
     portraitIndex = (portraitIndex + 1) % portraits.length;
     portrait.classList.add("is-changing");
     setTimeout(() => {
@@ -175,10 +178,16 @@ function cyclePortrait() {
     }, 180);
 }
 
-let portraitTimer = setInterval(() => {
-    if (document.hidden) return;
-    cyclePortrait();
-}, 7000);
+if (portrait) {
+    portraits.slice(1).forEach((src) => {
+        const img = new Image();
+        img.src = src;
+    });
+    portraitTimer = setInterval(() => {
+        if (document.hidden) return;
+        cyclePortrait();
+    }, 7000);
+}
 
 let hiccupAnim = null;
 let lastTiltDir = 1;
@@ -534,7 +543,7 @@ if (header) {
         var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
         var rawRatio = maxScroll > 0 ? Math.min(1, Math.max(0, scrollTop / maxScroll)) : 0;
 
-        progress.style.width = (rawRatio * 100) + '%';
+        if (progress) progress.style.width = (rawRatio * 100) + '%';
 
         if (parallaxFrame && !prefersReducedMotion) {
             var offset = Math.max(-14, Math.min(14, (scrollTop - parallaxFrame.offsetTop) * 0.035));
@@ -570,10 +579,12 @@ if (header) {
         syncScrollState();
     });
     window.addEventListener('scroll', onScroll, { passive: true });
-    toggler.addEventListener('change', function () {
-        readColor();
-        requestCanvasRender();
-    });
+    if (toggler) {
+        toggler.addEventListener('change', function () {
+            readColor();
+            requestCanvasRender();
+        });
+    }
 
     readColor();
     resize();
