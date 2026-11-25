@@ -1,7 +1,6 @@
 const body = document.body;
 const toggler = document.getElementById("toggler");
 const clock = document.getElementById("clock");
-const progress = document.getElementById("scrollProgress");
 const portrait = document.getElementById("mypic");
 const parallaxFrame = document.querySelector("[data-parallax]");
 const favicon = document.getElementById("favicon");
@@ -1060,10 +1059,6 @@ if (header) {
 
     function syncScrollState(fromScroll) {
         var scrollTop = window.scrollY || document.documentElement.scrollTop;
-        var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-        var rawRatio = maxScroll > 0 ? Math.min(1, Math.max(0, scrollTop / maxScroll)) : 0;
-
-        if (progress) progress.style.width = (rawRatio * 100) + "%";
 
         if (parallaxFrame && portrait && !prefersReducedMotion) {
             var offset = Math.max(-14, Math.min(14, (scrollTop - parallaxFrame.offsetTop) * 0.035));

@@ -102,8 +102,6 @@ p { margin: 0 0 1.2rem; }
     display: block;
 }
 
-.scroll-progress { position: fixed; inset: 0 0 auto; z-index: 20; height: 3px; background: transparent; }
-.scroll-progress span { display: block; width: 0; height: 100%; background: var(--accent); transition: width .1s linear; }
 .site-header {
     position: sticky;
     top: 0;
