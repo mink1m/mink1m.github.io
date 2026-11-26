@@ -364,11 +364,16 @@ body.dark-mode .status-dot {
     align-items: center;
     gap: 10px;
     padding: 10px 18px;
-    background: var(--paper);
+    background:
+        radial-gradient(120% 70% at 100% 130%, var(--glass-rim-tint), transparent 60%),
+        var(--glass-bg);
+    -webkit-backdrop-filter: blur(22px) saturate(180%);
+    backdrop-filter: blur(22px) saturate(180%);
     color: var(--green);
-    border: 1px solid var(--line);
+    border: 1px solid var(--glass-border);
     border-radius: 999px;
-    box-shadow: var(--shadow);
+    box-shadow: var(--glass-shadow);
+    isolation: isolate;
     font-size: .78rem;
     letter-spacing: .03em;
     white-space: normal;
@@ -376,13 +381,35 @@ body.dark-mode .status-dot {
     pointer-events: none;
     opacity: 0;
     transform: translate(-50%, -10px);
-    transition: opacity .25s ease, transform .3s cubic-bezier(.22, 1, .36, 1);
+    transition: opacity .25s ease, transform .3s cubic-bezier(.22, 1, .36, 1), background .35s ease, border-color .35s ease, box-shadow .5s ease;
+}
+.copy-toast.has-svg-refraction {
+    backdrop-filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.008 0.012' numOctaves='2' seed='7' result='n'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='n' scale='16' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3C/svg%3E#g") blur(10px) saturate(190%);
 }
 .copy-toast::before {
     content: "●";
     color: var(--accent);
     font-size: .65em;
     flex-shrink: 0;
+}
+.copy-toast::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: conic-gradient(from var(--rim-angle), transparent 0deg, var(--glass-rim-bright) 26deg, transparent 75deg 285deg, var(--glass-rim-bright) 334deg, transparent 360deg);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: .55;
+    z-index: -1;
+    animation: rim-drift 16s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+    .copy-toast::after { animation: none; }
 }
 .copy-toast.is-visible {
     opacity: 1;

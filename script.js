@@ -243,8 +243,17 @@ if (parallaxFrame) {
     });
 }
 
+const supportsSvgRefraction =
+    window.CSS &&
+    CSS.supports("backdrop-filter", 'url("#g") blur(1px)') &&
+    !/Firefox/i.test(navigator.userAgent);
+
+if (supportsSvgRefraction && copyToast) {
+    copyToast.classList.add("has-svg-refraction");
+}
+
 if (header) {
-    if (window.CSS && CSS.supports("backdrop-filter", 'url("#g") blur(1px)') && !/Firefox/i.test(navigator.userAgent)) {
+    if (supportsSvgRefraction) {
         header.classList.add("has-svg-refraction");
     }
 
